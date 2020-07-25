@@ -85,3 +85,28 @@ let calculo: (numA: number, numB: number) => number
 
 calculo = multiplicar
 console.log(calculo(8,9))
+
+let usuario: { nome: string, idade: number} = {
+  nome: 'joao',
+  idade: 27
+}
+
+// usuario = {}
+//  usuario = {
+//   name: 'joao',
+//   agr: 27
+// }
+
+// desafio 01:
+
+let funcionario: { supervisores: string[], batePonto: (hora: number) => string } = {
+  supervisores: [
+    'paula',
+    'aline'
+  ],
+  batePonto(hora) {
+    return hora < 8 ? 'normal' : 'fora'
+  }
+}
+
+console.log(funcionario.batePonto(7))
