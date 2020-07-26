@@ -119,3 +119,13 @@ var produto = {
     }
 };
 produto.validarProduto();
+// valores opcionar
+var AlturaOpcional = 12;
+AlturaOpcional = null;
+var contato1 = {
+    nome: 'Fulano',
+    tel1: '5454465',
+    tel2: null
+};
+console.log(contato1.tel2);
+var podeSerNulo = null;

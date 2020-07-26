@@ -156,3 +156,23 @@ const produto = {
 }
 
 produto.validarProduto()
+
+// valores opcionar
+let AlturaOpcional: null | number = 12
+AlturaOpcional = null
+
+type Contato = {
+  nome: string,
+  tel1: string,
+  tel2: string | null
+}
+
+const contato1: Contato = {
+  nome: 'Fulano',
+  tel1: '5454465',
+  tel2: null
+}
+
+console.log(contato1.tel2)
+
+let podeSerNulo: null = null
