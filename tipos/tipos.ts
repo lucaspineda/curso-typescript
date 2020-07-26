@@ -123,4 +123,7 @@ let funcionario2: Funcionario = {
   }
 }
 
-console.log(funcionario.batePonto(9))
+// Union types
+let nota: number | string = 10
+console.log(`Minha nota é ${nota}`)
+nota = '10'

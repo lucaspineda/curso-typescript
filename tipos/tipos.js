@@ -65,3 +65,31 @@ var calculo;
 // calculo()
 calculo = multiplicar;
 console.log(calculo(8, 9));
+var usuario = {
+    nome: 'joao',
+    idade: 27
+};
+// desafio 01:
+var funcionario = {
+    supervisores: [
+        'paula',
+        'aline'
+    ],
+    batePonto: function (hora) {
+        return hora < 8 ? 'normal' : 'fora';
+    }
+};
+console.log(funcionario.batePonto(9));
+var funcionario2 = {
+    supervisores: [
+        'biaa',
+        'paula'
+    ],
+    batePonto: function (hora) {
+        return hora < 8 ? 'normal' : 'fora';
+    }
+};
+// Union types
+var nota = 10;
+console.log("Minha nota \u00E9 " + nota);
+nota = '10';
