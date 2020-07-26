@@ -102,3 +102,20 @@ if (typeof valor === "number") {
 else {
     console.log(typeof valor);
 }
+// funcao never
+function falha(msg) {
+    throw new Error(msg);
+}
+var produto = {
+    nome: 'sabao',
+    preco: 8,
+    validarProduto: function () {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Preço inválido');
+        }
+    }
+};
+produto.validarProduto();

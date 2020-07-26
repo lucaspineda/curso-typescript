@@ -137,3 +137,22 @@ if (typeof valor === "number") {
   console.log(typeof valor)
 }
 
+// funcao never
+
+function falha(msg: string): never {
+  throw new Error(msg)
+}
+
+const produto = {
+  nome: 'sabao',
+  preco: 8,
+  validarProduto() {
+    if (!this.nome || this.nome.trim().length == 0) {
+      falha('precisa ter um nome')
+    } if(this.preco <= 0) {
+      falha('Preço inválido')
+    }
+  }
+}
+
+produto.validarProduto()
