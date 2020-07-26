@@ -97,9 +97,11 @@ let usuario: { nome: string, idade: number} = {
 //   agr: 27
 // }
 
-// desafio 01:
+// alias
+type Funcionario = { supervisores: string[], batePonto: (hora: number) => string }
 
-let funcionario: { supervisores: string[], batePonto: (hora: number) => string } = {
+// desafio 01:
+let funcionario: Funcionario = {
   supervisores: [
     'paula',
     'aline'
@@ -109,4 +111,16 @@ let funcionario: { supervisores: string[], batePonto: (hora: number) => string }
   }
 }
 
-console.log(funcionario.batePonto(7))
+console.log(funcionario.batePonto(9))
+
+let funcionario2: Funcionario = {
+  supervisores: [
+    'biaa',
+    'paula'
+  ],
+  batePonto(hora) {
+    return hora < 8 ? 'normal' : 'fora'
+  }
+}
+
+console.log(funcionario.batePonto(9))
