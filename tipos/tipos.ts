@@ -127,3 +127,13 @@ let funcionario2: Funcionario = {
 let nota: number | string = 10
 console.log(`Minha nota é ${nota}`)
 nota = '10'
+
+// checando tipos
+let valor = 30
+//  o proprio compilador checa o tipo, nao precisa fazer a seguinte checagem igual no js:
+if (typeof valor === "number") {
+  console.log('é um number')
+} else {
+  console.log(typeof valor)
+}
+

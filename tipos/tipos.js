@@ -93,3 +93,12 @@ var funcionario2 = {
 var nota = 10;
 console.log("Minha nota \u00E9 " + nota);
 nota = '10';
+// checando tipos
+var valor = 30;
+//  o proprio compilador checa o tipo, nao precisa fazer a seguinte checagem igual no js:
+if (typeof valor === "number") {
+    console.log('é um number');
+}
+else {
+    console.log(typeof valor);
+}
