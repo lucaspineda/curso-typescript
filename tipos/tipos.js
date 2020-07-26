@@ -1,29 +1,29 @@
 "use strict";
 // string
-var nome = 'João';
+let nome = 'João';
 console.log(nome);
 // nome = 23
 // numbers
-var idade = 27;
+let idade = 27;
 idade = 27.5;
 console.log(idade);
 // booleans
-var possuioHobbies = false;
+let possuioHobbies = false;
 console.log(possuioHobbies);
 // tipos explicitos
-var minhaIdade;
+let minhaIdade;
 // O tipo any tbm existe
 minhaIdade = 27;
 console.log(typeof minhaIdade);
 // minhaIdade = '27'
 // console.log(typeof minhaIdade)
 // array
-var hobbies = ["Cozinhar", "Praticar esportes"];
+let hobbies = ["Cozinhar", "Praticar esportes"];
 // conteudo do array pode ser qualquer
 hobbies = [100];
 // hobbies = 100 
 // tuplas
-var endereco = ['Av principal', 99];
+let endereco = ['Av principal', 99];
 // let endereco: [string, number] = ['Av principal', 99, 654654] -> errado
 // enum
 var Cor;
@@ -35,11 +35,11 @@ var Cor;
     Cor[Cor["Amarelo"] = 4] = "Amarelo";
     Cor[Cor["Vermelho"] = 5] = "Vermelho";
 })(Cor || (Cor = {}));
-var minhaCor = Cor.Verde;
+let minhaCor = Cor.Verde;
 console.log(minhaCor);
 console.log(Cor.Laranja, Cor.Vermelho);
 // any (evitar, mesmo que js)
-var carro = 'ferrari';
+let carro = 'ferrari';
 carro = {
     marca: 'bmw',
     ano: 2019
@@ -60,41 +60,41 @@ function multiplicar(numA, numB) {
 }
 console.log(multiplicar(1, 2));
 // tipo funcao 
-var calculo;
+let calculo;
 // calculo = digaOi - errado
 // calculo()
 calculo = multiplicar;
 console.log(calculo(8, 9));
-var usuario = {
+let usuario = {
     nome: 'joao',
     idade: 27
 };
 // desafio 01:
-var funcionario = {
+let funcionario = {
     supervisores: [
         'paula',
         'aline'
     ],
-    batePonto: function (hora) {
+    batePonto(hora) {
         return hora < 8 ? 'normal' : 'fora';
     }
 };
 console.log(funcionario.batePonto(9));
-var funcionario2 = {
+let funcionario2 = {
     supervisores: [
         'biaa',
         'paula'
     ],
-    batePonto: function (hora) {
+    batePonto(hora) {
         return hora < 8 ? 'normal' : 'fora';
     }
 };
 // Union types
-var nota = 10;
-console.log("Minha nota \u00E9 " + nota);
+let nota = 10;
+console.log(`Minha nota é ${nota}`);
 nota = '10';
 // checando tipos
-var valor = 30;
+let valor = 30;
 //  o proprio compilador checa o tipo, nao precisa fazer a seguinte checagem igual no js:
 if (typeof valor === "number") {
     console.log('é um number');
@@ -106,10 +106,10 @@ else {
 function falha(msg) {
     throw new Error(msg);
 }
-var produto = {
+const produto = {
     nome: 'sabao',
     preco: 8,
-    validarProduto: function () {
+    validarProduto() {
         if (!this.nome || this.nome.trim().length == 0) {
             falha('precisa ter um nome');
         }
@@ -120,22 +120,22 @@ var produto = {
 };
 produto.validarProduto();
 // valores opcionar
-var AlturaOpcional = 12;
+let AlturaOpcional = 12;
 AlturaOpcional = null;
-var contato1 = {
+const contato1 = {
     nome: 'Fulano',
     tel1: '5454465',
     tel2: null
 };
 console.log(contato1.tel2);
-var podeSerNulo = null;
-var contaBancaria = {
+let podeSerNulo = null;
+let contaBancaria = {
     saldo: 3456,
-    depositar: function (valor) {
+    depositar(valor) {
         this.saldo += valor;
     }
 };
-var correntista = {
+let correntista = {
     nome: 'Ana Silva',
     contaBancaria: contaBancaria,
     contatos: ['34567890', '98765432']
