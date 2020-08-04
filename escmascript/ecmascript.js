@@ -35,6 +35,13 @@ function contagemRegressiva(inicio = 3, fim = inicio - 5) {
 }
 contagemRegressiva();
 // operador rest e spread
+// spread
 const numbers = [1, 10, 99, -5];
 console.log(Math.max(...numbers));
+// rest
+function retornaArray(...args) {
+    return args;
+}
+const numeros = retornaArray(1, 2, 3, 56);
+console.log(numeros);
 //# sourceMappingURL=ecmascript.js.map
