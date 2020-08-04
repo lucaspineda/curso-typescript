@@ -44,4 +44,10 @@ function retornaArray(...args) {
 }
 const numeros = retornaArray(1, 2, 3, 56);
 console.log(numeros);
+// operador rest e spread (tupla)
+const tupla = [1, 'abc', false];
+function tuplaParam(...params) {
+    console.log(params[0], params[1], params[2]);
+}
+tuplaParam(...tupla);
 //# sourceMappingURL=ecmascript.js.map
