@@ -37,3 +37,14 @@ normalFunctionComBindDoThis()
 // o this nunca muda aqui, mesmo usando o bind
 // const arrowFunction = () => console.log(this)
 // arrowFunction()
+
+// PArametro padrao
+function contagemRegressiva(inicio: number = 3, fim: number = inicio - 5): void {
+  console.log(inicio)
+  while(inicio >= fim) {
+    inicio--
+    console.log(inicio)
+  }
+}
+
+contagemRegressiva()
