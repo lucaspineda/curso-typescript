@@ -50,4 +50,15 @@ function tuplaParam(...params) {
     console.log(params[0], params[1], params[2]);
 }
 tuplaParam(...tupla);
+// Destructuring(Array)
+const caracteristicas = ['Motor Zetec 1.8', 2020];
+const [motor, ano] = caracteristicas;
+console.log(motor);
+// Destructuring(Obj)
+const item = {
+    nome: 'ssd 480gb',
+    preco: 200
+};
+const { nome: nm } = item;
+console.log(nm);
 //# sourceMappingURL=ecmascript.js.map
