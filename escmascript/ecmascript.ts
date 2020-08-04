@@ -48,3 +48,8 @@ function contagemRegressiva(inicio: number = 3, fim: number = inicio - 5): void 
 }
 
 contagemRegressiva()
+
+// operador rest e spread
+
+const numbers = [1, 10, 99, -5]
+console.log(Math.max(...numbers))

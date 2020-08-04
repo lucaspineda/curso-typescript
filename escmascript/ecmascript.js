@@ -25,4 +25,16 @@ normalFunctionComBindDoThis();
 // o this nunca muda aqui, mesmo usando o bind
 // const arrowFunction = () => console.log(this)
 // arrowFunction()
+// PArametro padrao
+function contagemRegressiva(inicio = 3, fim = inicio - 5) {
+    console.log(inicio);
+    while (inicio >= fim) {
+        inicio--;
+        console.log(inicio);
+    }
+}
+contagemRegressiva();
+// operador rest e spread
+const numbers = [1, 10, 99, -5];
+console.log(Math.max(...numbers));
 //# sourceMappingURL=ecmascript.js.map
