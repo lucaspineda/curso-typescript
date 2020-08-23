@@ -105,25 +105,23 @@ const cientista = { primeiroNome: "Will", experiencia: 12 };
 const { primeiroNome, experiencia } = cientista;
 console.log(primeiroNome, experiencia);
 // callback
-function esperar3s(callback) {
-    setTimeout(() => {
-        callback('3 segundos depois;;;');
-    }, 3000);
-}
-esperar3s(function (resultado) {
-    console.log(resultado);
-});
-// const resultado = esperar3s()
-// console.log(resultado) //retorna undefined
-// promise
-function esperar3spromise() {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve('3 segundos depois;;;');
-        }, 3000);
-    });
-}
-esperar3spromise()
-    .then(dado => console.log(dado));
+// function esperar3s(callback) {
+//   setTimeout(() => {
+//     callback('3 segundos depois;;;')
+//   }, 3000);
+// }
+// esperar3s(function(resultado) {
+//   console.log(resultado)
+// })
+// // promise
+// function esperar3spromise() {
+//   return new Promise((resolve: any) => {
+//     setTimeout(() => {
+//       resolve('3 segundos depois;;;')
+//     }, 3000);
+//   })
+// }
+// esperar3spromise()
+//   .then(dado => console.log(dado+'ds'))
 // com promises as chamadas sao melhores encadeadas, pode usar multiplos then
 //# sourceMappingURL=ecmascript.js.map
