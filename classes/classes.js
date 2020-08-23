@@ -1,13 +1,6 @@
 "use strict";
-classclass;
-Data;
-{
-    // publico por padrao
-    dia: number;
-    mes: number;
-    ano: number;
-    constructor(dia, number = 1, mes, number = 1, ano, number = 1970);
-    {
+class Data {
+    constructor(dia = 1, mes = 1, ano = 1970) {
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;

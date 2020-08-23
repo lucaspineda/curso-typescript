@@ -1,4 +1,4 @@
-classclass Data {
+class Data {
   // publico por padrao
   dia: number
   mes: number
