@@ -27,3 +27,22 @@ aniversario.dia = 4
 console.log(aniversario.dia)
 
 const casamentoEsperto = new DataEsperta //pode-se omitir os parenteses devido ao valor padrao
+
+class Produto {
+  constructor(public nome: string, public preco: number, public desconto: number = 0) {
+
+  }
+
+  public resumo() : string {
+    return `${this.nome} custa ${this.preco } e com desconto: ${this.precoComDesconto()}`
+  }
+
+  // tbm é public
+  precoComDesconto() : number {
+    return this.preco * (1 - this.desconto)
+  }
+}
+
+const produto1 = new Produto('Caneta bic', 4.20, 0.9)
+console.log(produto1)
+console.log(produto1.resumo())
