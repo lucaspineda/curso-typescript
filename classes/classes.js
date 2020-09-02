@@ -45,6 +45,9 @@ class Carro {
         this.velocidadeMaxima = velocidadeMaxima;
         this.velocidadeAtual = 0;
     }
+    // protected é transmitido por herença
+    // private nao eh transmitido por herença
+    // public é visivel para todos
     alterarVelocidade(delta) {
         const novaVelocidade = this.velocidadeAtual + delta;
         const velocidadeValida = novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima;
@@ -66,4 +69,16 @@ class Carro {
 const carro1 = new Carro('Ford', 'ka', 100);
 console.log(carro1.acelerar());
 // console.log(carro1.alterarVelocidade()); //este metodo nao pode ser acessada pois é privada.
+// Herança
+class Ferrari extends Carro {
+    acelerar() {
+        return this.alterarVelocidade(20);
+    }
+    frear() {
+        return this.alterarVelocidade(-15);
+    }
+}
+const f40 = new Ferrari('Ferrari', 'f40', 324);
+console.log(f40);
+console.log(f40.acelerar());
 //# sourceMappingURL=classes.js.map
