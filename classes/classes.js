@@ -71,6 +71,9 @@ console.log(carro1.acelerar());
 // console.log(carro1.alterarVelocidade()); //este metodo nao pode ser acessada pois é privada.
 // Herança
 class Ferrari extends Carro {
+    constructor(modelo, velocidadeMaxima) {
+        super('Ferrari', modelo, velocidadeMaxima);
+    }
     acelerar() {
         return this.alterarVelocidade(20);
     }
@@ -78,7 +81,85 @@ class Ferrari extends Carro {
         return this.alterarVelocidade(-15);
     }
 }
-const f40 = new Ferrari('Ferrari', 'f40', 324);
+const f40 = new Ferrari('f40', 324);
 console.log(f40);
 console.log(f40.acelerar());
+// Getters & Setters
+class Pessoa {
+    constructor() {
+        this._idade = 0;
+    }
+    get idade() {
+        return this._idade;
+    }
+    set idade(valor) {
+        if (valor >= 0 && valor <= 120) {
+            this._idade = valor;
+        }
+    }
+}
+const pessoa1 = new Pessoa;
+pessoa1.idade = 10;
+console.log(pessoa1.idade);
+pessoa1.idade = -3; // essa alteração nao fara nenhum efeito
+console.log(pessoa1.idade);
+// // Atributos e métodos estáticos
+// class Matematica {
+//   static PI: number = 3.1416
+//   static areaCirc(raio: number): number {
+//       return Matematica.PI * raio * raio
+//   }
+// }
+// // const m1 = new Matematica()
+// // m1.PI = 4.2
+// // console.log(m1.areaCirc(4))
+// console.log(Matematica.areaCirc(4))
+// // Classe abstrata
+// abstract class Calculo {
+//   protected resultado: number = 0
+//   abstract executar(...numeros: number[]): void
+//   getResultado(): number {
+//       return this.resultado
+//   }
+// }
+// class Soma extends Calculo {
+//   executar(...numeros: number[]): void {
+//       this.resultado = numeros.reduce((t, a) => t + a)
+//   }
+// }
+// class Multiplicacao extends Calculo {
+//   executar(...numeros: number[]): void {
+//       this.resultado = numeros.reduce((t, a) => t * a)
+//   }
+// }
+// let c1: Calculo = new Soma()
+// c1.executar(2, 3, 4, 5)
+// console.log(c1.getResultado())
+// c1 = new Multiplicacao()
+// c1.executar(2, 3, 4, 5)
+// console.log(c1.getResultado())
+// class Unico {
+//   private static instance: Unico = new Unico
+//   private constructor() {}
+//   static getInstance(): Unico {
+//       return Unico.instance
+//   }
+//   agora() {
+//       return new Date
+//   }
+// }
+// // const errado = new Unico()
+// console.log(Unico.getInstance().agora())
+// // Somente Leitura
+// class Aviao {
+//   public readonly modelo: string
+//   constructor(modelo: string,
+//       public readonly prefixo: string) {
+//       this.modelo = modelo
+//   }
+// }
+// const turboHelice = new Aviao('Tu-114', 'PT-ABC')
+// // turboHelice.modelo = 'DC-8'
+// // turboHelice.prefixo = 'PT-DEF'
+// console.log(turboHelice)
 //# sourceMappingURL=classes.js.map
