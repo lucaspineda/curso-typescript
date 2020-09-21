@@ -141,18 +141,18 @@ console.log(c1.getResultado());
 c1 = new Multiplicacao();
 c1.executar(2, 3, 4, 5);
 console.log(c1.getResultado());
-// class Unico {
-//   private static instance: Unico = new Unico
-//   private constructor() {}
-//   static getInstance(): Unico {
-//       return Unico.instance
-//   }
-//   agora() {
-//       return new Date
-//   }
-// }
-// // const errado = new Unico()
-// console.log(Unico.getInstance().agora())
+class Unico {
+    constructor() { }
+    static getInstance() {
+        return Unico.instance;
+    }
+    agora() {
+        return new Date;
+    }
+}
+Unico.instance = new Unico;
+// const errado = new Unico()
+console.log(Unico.getInstance().agora());
 // // Somente Leitura
 // class Aviao {
 //   public readonly modelo: string
