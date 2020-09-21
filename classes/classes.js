@@ -103,17 +103,17 @@ pessoa1.idade = 10;
 console.log(pessoa1.idade);
 pessoa1.idade = -3; // essa alteração nao fara nenhum efeito
 console.log(pessoa1.idade);
-// // Atributos e métodos estáticos
-// class Matematica {
-//   static PI: number = 3.1416
-//   static areaCirc(raio: number): number {
-//       return Matematica.PI * raio * raio
-//   }
-// }
-// // const m1 = new Matematica()
-// // m1.PI = 4.2
-// // console.log(m1.areaCirc(4))
-// console.log(Matematica.areaCirc(4))
+// Atributos e métodos estáticos
+class Matematica {
+    static areaCirc(raio) {
+        return Matematica.PI * raio * raio;
+    }
+}
+Matematica.PI = 3.1416;
+// const m1 = new Matematica()
+// m1.PI = 4.2
+// console.log(m1.areaCirc(4))
+console.log(Matematica.areaCirc(4));
 // // Classe abstrata
 // abstract class Calculo {
 //   protected resultado: number = 0
