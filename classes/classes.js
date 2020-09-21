@@ -114,14 +114,15 @@ Matematica.PI = 3.1416;
 // m1.PI = 4.2
 // console.log(m1.areaCirc(4))
 console.log(Matematica.areaCirc(4));
-// // Classe abstrata
-// abstract class Calculo {
-//   protected resultado: number = 0
-//   abstract executar(...numeros: number[]): void
-//   getResultado(): number {
-//       return this.resultado
-//   }
-// }
+// Classe abstrata
+class Calculo {
+    constructor() {
+        this.resultado = 0;
+    }
+    getResultado() {
+        return this.resultado;
+    }
+}
 // class Soma extends Calculo {
 //   executar(...numeros: number[]): void {
 //       this.resultado = numeros.reduce((t, a) => t + a)

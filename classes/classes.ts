@@ -134,7 +134,7 @@ class Matematica {
   static PI: number = 3.1416
 
   static areaCirc(raio: number): number {
-      return Matematica.PI * raio * raio
+    return Matematica.PI * raio * raio
   }
 }
 
@@ -144,16 +144,16 @@ class Matematica {
 
 console.log(Matematica.areaCirc(4))
 
-// // Classe abstrata
-// abstract class Calculo {
-//   protected resultado: number = 0
+// Classe abstrata
+abstract class Calculo {
+  protected resultado: number = 0
 
-//   abstract executar(...numeros: number[]): void
+  abstract executar(...numeros: number[]): void
 
-//   getResultado(): number {
-//       return this.resultado
-//   }
-// }
+  getResultado(): number {
+    return this.resultado
+  }
+}
 
 // class Soma extends Calculo {
 //   executar(...numeros: number[]): void {
