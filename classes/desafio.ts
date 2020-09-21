@@ -1,10 +1,8 @@
 // Exercício 1 - Classe
 class Moto {
-  public nome: string;
   public velocidade: number = 0;
 
-  constructor(nome: string) {
-    this.nome = nome;
+  constructor(public nome: string) {
     this.velocidade = 0;
   }
 
@@ -17,7 +15,7 @@ class Moto {
   }
 }
 
-var moto = new Moto('Ducati')
+const moto = new Moto('Ducati')
 moto.buzinar()
 console.log(moto.velocidade)
 moto.acelerar(30)

@@ -2,8 +2,8 @@
 // Exercício 1 - Classe
 class Moto {
     constructor(nome) {
-        this.velocidade = 0;
         this.nome = nome;
+        this.velocidade = 0;
         this.velocidade = 0;
     }
     buzinar() {
@@ -13,7 +13,7 @@ class Moto {
         this.velocidade = this.velocidade + delta;
     }
 }
-var moto = new Moto('Ducati');
+const moto = new Moto('Ducati');
 moto.buzinar();
 console.log(moto.velocidade);
 moto.acelerar(30);
