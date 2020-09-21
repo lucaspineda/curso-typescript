@@ -123,22 +123,24 @@ class Calculo {
         return this.resultado;
     }
 }
-// class Soma extends Calculo {
-//   executar(...numeros: number[]): void {
-//       this.resultado = numeros.reduce((t, a) => t + a)
-//   }
-// }
-// class Multiplicacao extends Calculo {
-//   executar(...numeros: number[]): void {
-//       this.resultado = numeros.reduce((t, a) => t * a)
-//   }
-// }
-// let c1: Calculo = new Soma()
-// c1.executar(2, 3, 4, 5)
-// console.log(c1.getResultado())
-// c1 = new Multiplicacao()
-// c1.executar(2, 3, 4, 5)
-// console.log(c1.getResultado())
+class Soma extends Calculo {
+    //  classe filha deve implementar os metodos abstratos da classe pai
+    executar(...numeros) {
+        this.resultado = numeros.reduce((t, a) => t + a);
+    }
+}
+// Não é possivel instanciar uma classe abstrata
+class Multiplicacao extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((t, a) => t * a);
+    }
+}
+let c1 = new Soma();
+c1.executar(2, 3, 4, 5);
+console.log(c1.getResultado());
+c1 = new Multiplicacao();
+c1.executar(2, 3, 4, 5);
+console.log(c1.getResultado());
 // class Unico {
 //   private static instance: Unico = new Unico
 //   private constructor() {}
