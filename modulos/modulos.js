@@ -12,6 +12,6 @@ console.log(circunferencia_1.areaCircunferencia(8));
 // console.log('Módulo carregado...')
 // console.log(retangulo(7, 8))
 // console.log(circ(2))
-// const { digaOi } = require('./novo')
-// console.log(digaOi('Ana'))
+const { digaOi } = require('./novo');
+console.log(digaOi('Ana'));
 //# sourceMappingURL=modulos.js.map

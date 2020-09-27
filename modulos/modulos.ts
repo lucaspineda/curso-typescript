@@ -9,5 +9,6 @@ console.log(circ(8))
 // console.log(retangulo(7, 8))
 // console.log(circ(2))
 
-// const { digaOi } = require('./novo')
-// console.log(digaOi('Ana'))
+const { digaOi } = require('./novo')
+console.log(digaOi('Ana'))
+
