@@ -37,22 +37,23 @@ imprimir([
 const chamarEcho = echoMelhorado;
 console.log(chamarEcho('Alguma coisa'));
 // Class com Generics
-// abstract class OperacaoBinaria<T, R> {
-//   constructor(public operando1: T,
-//       public operando2: T) {}
-//   abstract executar(): R
-// }
-// // console.log(new OperacaoBinaria('Bom ', 'dia').executar())
-// // console.log(new OperacaoBinaria(3, 7).executar())
-// // console.log(new OperacaoBinaria(3, 'Opa').executar())
-// // console.log(new OperacaoBinaria({}, null).executar())
-// class SomaBinaria extends OperacaoBinaria<number, number> {
-//   executar(): number {
-//       return this.operando1 + this.operando2
-//   }
-// }
-// console.log(new SomaBinaria(3, 4).executar())
-// console.log(new SomaBinaria(30, 434).executar())
+class OperacaoBinaria {
+    constructor(operando1, operando2) {
+        this.operando1 = operando1;
+        this.operando2 = operando2;
+    }
+}
+// console.log(new OperacaoBinaria('Bom ', 'dia').executar())
+// console.log(new OperacaoBinaria(3, 7).executar())
+// console.log(new OperacaoBinaria(3, 'Opa').executar())
+// console.log(new OperacaoBinaria({}, null).executar())
+class SomaBinaria extends OperacaoBinaria {
+    executar() {
+        return this.operando1 + this.operando2;
+    }
+}
+console.log(new SomaBinaria(3, 4).executar());
+console.log(new SomaBinaria(30, 434).executar());
 // class DiferencaEntreDatas
 //   extends OperacaoBinaria<Data, string> {
 //   getTime(data: Data): number {
