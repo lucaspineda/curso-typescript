@@ -42,12 +42,12 @@ imprimir<Aluno>([
   { nome: 'Beltrano', idade: 24 }
 ])
 
-// // Tipo Genérico
-// type Echo = <T>(data: T) => T
-// const chamarEcho: Echo = echoMelhorado
-// console.log(chamarEcho<string>('Alguma coisa'))
+// Tipo Genérico
+type Echo = <T>(data: T) => T
+const chamarEcho: Echo = echoMelhorado
+console.log(chamarEcho<string>('Alguma coisa'))
 
-// // Class com Generics
+// Class com Generics
 // abstract class OperacaoBinaria<T, R> {
 //   constructor(public operando1: T,
 //       public operando2: T) {}
