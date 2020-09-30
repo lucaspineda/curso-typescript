@@ -5,13 +5,13 @@ function echo(objeto) {
 console.log(echo('João').length);
 console.log(echo(27).length);
 console.log(echo({ nome: 'João', idade: 27 }));
-// // Usando Generics
-// function echoMelhorado<TIPO>(objeto: TIPO): TIPO {
-//   return objeto
-// }
-// console.log(echoMelhorado('João').length)
-// console.log(echoMelhorado<number>(27))
-// console.log(echoMelhorado({ nome: 'João', idade: 27 }).nome)
+// Usando Generics
+function echoMelhorado(objeto) {
+    return objeto;
+}
+console.log(echoMelhorado('João').length);
+console.log(echoMelhorado(27));
+console.log(echoMelhorado({ nome: 'João', idade: 27 }).nome);
 // // Generics disponíveis na API
 // const avaliacoes: Array<number> = [10, 9.3, 7.7]
 // avaliacoes.push(8.4)
