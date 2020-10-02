@@ -114,7 +114,7 @@ class MyQueue<T> {
   }
 }
 
-const q1 = new MyQueue(4,5);
+const q1 = new MyQueue<number>(4,5);
 q1.PushToQueue(6);
 q1.next()
 q1.print()
