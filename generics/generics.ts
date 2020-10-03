@@ -1,3 +1,5 @@
+import { type } from "os"
+
 function echo(objeto: any) {
   return objeto
 }
@@ -124,42 +126,43 @@ q1.print()
 // // Métodos: obter(Chave), colocar({ C, V })
 // // limpar(), imprimir()
 
-// type Par<C, V> = { chave: C, valor: V }
 
-// class Mapa<C, V> {
-//   itens: Array<Par<C, V>> = new Array<Par<C, V>>()
+type Obj<T,R> = { chave: T , valor: R };
 
-//   obter(chave: C): Par<C, V> | null {
-//       const resultado = this.itens
-//           .filter(i => i.chave === chave)
-//       return resultado ? resultado[0] : null
-//   }
+class Mapa<T, R> {
+  private objs: Array<Obj<T,R>>;
+  constructor(){
+    this.objs = new Array<Obj<T,R>>()
+  }
+  public obter(chave: T): Obj<T,R> | null {
+    const resultado = this.objs.filter((element) => {
+      console.log(element);
+      return element.chave == chave
+    })
+    return resultado ? resultado[0] : null;
+  }
 
-//   colocar(par: Par<C, V>) {
-//       const encontrado = this.obter(par.chave)
-//       if(encontrado) {
-//           encontrado.valor = par.valor
-//       } else {
-//           this.itens.push(par)
-//       }
-//   }
+  public colocar(obj: Obj<T,R>) {
+    const resultado = this.obter(obj.chave)
+    resultado ? resultado.valor = obj.valor : this.objs.push(obj)
+  }
 
-//   limpar() {
-//       this.itens = new Array<Par<C, V>>()
-//   }
+  public limpar(): void {
+    this.objs.splice(0, this.objs.length)
+  }
 
-//   imprimir() {
-//       console.log(this.itens)
-//   }
-// }
+  public imprimir(): void {
+    console.log(this.objs)
+  }
+}
 
-// const mapa = new Mapa<number, string>()
-// mapa.colocar({ chave: 1, valor: 'Pedro' })
-// mapa.colocar({ chave: 2, valor: 'Rebeca' })
-// mapa.colocar({ chave: 3, valor: 'Maria' })
-// mapa.colocar({ chave: 1, valor: 'Gustavo' })
+const mapa = new Mapa<number, string>()
+mapa.colocar({ chave: 1, valor: 'Pedro' })
+mapa.colocar({ chave: 2, valor: 'Rebeca' })
+mapa.colocar({ chave: 3, valor: 'Maria' })
+mapa.colocar({ chave: 1, valor: 'Gustavo' })
 
-// console.log(mapa.obter(2))
-// mapa.imprimir()
-// mapa.limpar()
-// mapa.imprimir()
+console.log(mapa.obter(2))
+mapa.imprimir()
+mapa.limpar()
+mapa.imprimir()
