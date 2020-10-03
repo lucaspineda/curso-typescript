@@ -93,7 +93,7 @@ console.log(new SomaBinaria(30, 434).executar())
 // // Atributo: fila (Array)
 // // Métodos: entrar, proximo, imprimir
 
-class MyQueue<T> {
+class MyQueue<T extends string | number> {
   private queue: Array<T>
 
   constructor(...args: T[]) {
