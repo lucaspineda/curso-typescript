@@ -136,8 +136,7 @@ class Mapa<T, R> {
   }
   public obter(chave: T): Obj<T,R> | null {
     const resultado = this.objs.filter((element) => {
-      console.log(element);
-      return element.chave == chave
+      return element.chave === chave
     })
     return resultado ? resultado[0] : null;
   }
@@ -148,7 +147,7 @@ class Mapa<T, R> {
   }
 
   public limpar(): void {
-    this.objs.splice(0, this.objs.length)
+    this.objs = new Array<Obj<T,R>>()
   }
 
   public imprimir(): void {

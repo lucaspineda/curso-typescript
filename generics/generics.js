@@ -100,8 +100,7 @@ class Mapa {
     }
     obter(chave) {
         const resultado = this.objs.filter((element) => {
-            console.log(element);
-            return element.chave == chave;
+            return element.chave === chave;
         });
         return resultado ? resultado[0] : null;
     }
@@ -110,7 +109,7 @@ class Mapa {
         resultado ? resultado.valor = obj.valor : this.objs.push(obj);
     }
     limpar() {
-        this.objs.splice(0, this.objs.length);
+        this.objs = new Array();
     }
     imprimir() {
         console.log(this.objs);
