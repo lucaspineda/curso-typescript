@@ -14,18 +14,18 @@ function decorator(obj: { a: string, b?: number }) {
   }
 }
 
-// type Construtor = { new(...args: any[]): {} }
+type Construtor = { new(...args: any[]): {} }
 
-// function logarObjeto(construtor: Construtor) {
-//   console.log('Carregado...')
-//   return class extends construtor {
-//       constructor(...args: any[]) {
-//           console.log('Antes...')
-//           super(...args)
-//           console.log('Depois...')
-//       }
-//   }
-// }
+function logarObjeto(construtor: Construtor) {
+  console.log('Carregado...')
+  return class extends construtor {
+      constructor(...args: any[]) {
+          console.log('Antes...')
+          super(...args)
+          console.log('Depois...')
+      }
+  }
+}
 
 
 // interface Eletrodomestico {
@@ -34,8 +34,8 @@ function decorator(obj: { a: string, b?: number }) {
   
   // @logarClasse
   // @decorator({ a: 'Teste', b: 123 })
-  @logarClasseSe(true)
-  // @logarObjeto
+  // @logarClasseSe(true)
+  @logarObjeto
   // @imprimivel
   class Eletrodomestico {
     constructor() {

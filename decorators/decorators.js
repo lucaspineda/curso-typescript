@@ -17,24 +17,23 @@ function decorator(obj) {
         console.log(obj.a + ' ' + obj.b);
     };
 }
-// type Construtor = { new(...args: any[]): {} }
-// function logarObjeto(construtor: Construtor) {
-//   console.log('Carregado...')
-//   return class extends construtor {
-//       constructor(...args: any[]) {
-//           console.log('Antes...')
-//           super(...args)
-//           console.log('Depois...')
-//       }
-//   }
-// }
+function logarObjeto(construtor) {
+    console.log('Carregado...');
+    return class extends construtor {
+        constructor(...args) {
+            console.log('Antes...');
+            super(...args);
+            console.log('Depois...');
+        }
+    };
+}
 // interface Eletrodomestico {
 //   imprimir?(): void
 // }
 // @logarClasse
 // @decorator({ a: 'Teste', b: 123 })
+// @logarClasseSe(true)
 let Eletrodomestico = 
-// @logarObjeto
 // @imprimivel
 class Eletrodomestico {
     constructor() {
@@ -42,8 +41,7 @@ class Eletrodomestico {
     }
 };
 Eletrodomestico = __decorate([
-    logarClasseSe(true)
-    // @logarObjeto
+    logarObjeto
     // @imprimivel
 ], Eletrodomestico);
 new Eletrodomestico();
