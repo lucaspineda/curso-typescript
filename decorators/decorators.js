@@ -8,15 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 function logarClasse(construtor) {
     console.log(construtor);
 }
-// function decoratorVazio(_: Function) {}
-// function logarClasseSe(valor: boolean) {
-//   return valor ? logarClasse : decoratorVazio
-// }
-// function decorator(obj: { a: string, b?: number }) {
-//   return function(_: Function): void {
-//       console.log(obj.a + ' ' + obj.b)
-//   }
-// }
+function decoratorVazio(_) { }
+function logarClasseSe(valor) {
+    return valor ? logarClasse : decoratorVazio;
+}
+function decorator(obj) {
+    return function (_) {
+        console.log(obj.a + ' ' + obj.b);
+    };
+}
 // type Construtor = { new(...args: any[]): {} }
 // function logarObjeto(construtor: Construtor) {
 //   console.log('Carregado...')
@@ -31,9 +31,9 @@ function logarClasse(construtor) {
 // interface Eletrodomestico {
 //   imprimir?(): void
 // }
-let Eletrodomestico = 
+// @logarClasse
 // @decorator({ a: 'Teste', b: 123 })
-// @logarClasseSe(true)
+let Eletrodomestico = 
 // @logarObjeto
 // @imprimivel
 class Eletrodomestico {
@@ -42,9 +42,7 @@ class Eletrodomestico {
     }
 };
 Eletrodomestico = __decorate([
-    logarClasse
-    // @decorator({ a: 'Teste', b: 123 })
-    // @logarClasseSe(true)
+    logarClasseSe(true)
     // @logarObjeto
     // @imprimivel
 ], Eletrodomestico);
