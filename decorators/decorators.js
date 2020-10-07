@@ -27,35 +27,30 @@ function logarObjeto(construtor) {
         }
     };
 }
-// interface Eletrodomestico {
-//   imprimir?(): void
-// }
 // @logarClasse
 // @decorator({ a: 'Teste', b: 123 })
 // @logarClasseSe(true)
-let Eletrodomestico = 
-// @imprimivel
-class Eletrodomestico {
+// @logarObjeto
+let Eletrodomestico = class Eletrodomestico {
     constructor() {
         console.log('novo...');
     }
 };
 Eletrodomestico = __decorate([
-    logarObjeto
-    // @imprimivel
+    imprimivel
 ], Eletrodomestico);
-new Eletrodomestico();
-new Eletrodomestico();
-new Eletrodomestico();
-// function imprimivel(construtor: Function) {
-//   construtor.prototype.imprimir = function() {
-//       console.log(this)
-//   }
-// }
-// // (<any>new Eletrodomestico()).imprimir()
-// const eletro = new Eletrodomestico()
-// eletro.imprimir && eletro.imprimir()
-// eletro.imprimir && eletro.imprimir()
+// new Eletrodomestico()
+// new Eletrodomestico()
+// new Eletrodomestico()
+function imprimivel(construtor) {
+    construtor.prototype.imprimir = function () {
+        console.log(this);
+    };
+}
+// (<any>new Eletrodomestico()).imprimir()
+const eletro = new Eletrodomestico();
+eletro.imprimir && eletro.imprimir();
+eletro.imprimir && eletro.imprimir();
 // // Desafio Decorator perfilAdmin
 // const usuarioLogado = {
 //   nome: 'Guilherme Filho',

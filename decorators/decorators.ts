@@ -10,7 +10,7 @@ function logarClasseSe(valor: boolean) {
 
 function decorator(obj: { a: string, b?: number }) {
   return function(_: Function): void {
-      console.log(obj.a + ' ' + obj.b)
+    console.log(obj.a + ' ' + obj.b)
   }
 }
 
@@ -19,43 +19,44 @@ type Construtor = { new(...args: any[]): {} }
 function logarObjeto(construtor: Construtor) {
   console.log('Carregado...')
   return class extends construtor {
-      constructor(...args: any[]) {
-          console.log('Antes...')
-          super(...args)
-          console.log('Depois...')
-      }
+    constructor(...args: any[]) {
+      console.log('Antes...')
+      super(...args)
+      console.log('Depois...')
+    }
   }
 }
 
 
-// interface Eletrodomestico {
-  //   imprimir?(): void
-  // }
+interface Eletrodomestico {
+    imprimir?(): void
+  }
   
   // @logarClasse
   // @decorator({ a: 'Teste', b: 123 })
   // @logarClasseSe(true)
-  @logarObjeto
-  // @imprimivel
+  // @logarObjeto
+  @imprimivel
   class Eletrodomestico {
     constructor() {
       console.log('novo...')
     }
   }
   
-  new Eletrodomestico()
-  new Eletrodomestico()
-  new Eletrodomestico()
-// function imprimivel(construtor: Function) {
-//   construtor.prototype.imprimir = function() {
-//       console.log(this)
-//   }
-// }
+  // new Eletrodomestico()
+  // new Eletrodomestico()
+  // new Eletrodomestico()
 
-// // (<any>new Eletrodomestico()).imprimir()
-// const eletro = new Eletrodomestico()
-// eletro.imprimir && eletro.imprimir()
-// eletro.imprimir && eletro.imprimir()
+function imprimivel(construtor: Function) {
+  construtor.prototype.imprimir = function() {
+    console.log(this)
+  }
+}
+
+// (<any>new Eletrodomestico()).imprimir()
+const eletro = new Eletrodomestico()
+eletro.imprimir && eletro.imprimir()
+eletro.imprimir && eletro.imprimir()
 
 // // Desafio Decorator perfilAdmin
 // const usuarioLogado = {
