@@ -28,20 +28,21 @@ function logarObjeto(construtor) {
     };
 }
 // @logarClasse
-// @decorator({ a: 'Teste', b: 123 })
-// @logarClasseSe(true)
-// @logarObjeto
 let Eletrodomestico = class Eletrodomestico {
     constructor() {
         console.log('novo...');
     }
 };
 Eletrodomestico = __decorate([
+    decorator({ a: 'Teste', b: 123 })
+    // @logarClasseSe(true)
+    ,
+    logarObjeto,
     imprimivel
 ], Eletrodomestico);
-// new Eletrodomestico()
-// new Eletrodomestico()
-// new Eletrodomestico()
+new Eletrodomestico();
+new Eletrodomestico();
+new Eletrodomestico();
 function imprimivel(construtor) {
     construtor.prototype.imprimir = function () {
         console.log(this);

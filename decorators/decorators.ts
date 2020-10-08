@@ -33,9 +33,9 @@ interface Eletrodomestico {
   }
   
   // @logarClasse
-  // @decorator({ a: 'Teste', b: 123 })
+  @decorator({ a: 'Teste', b: 123 })
   // @logarClasseSe(true)
-  // @logarObjeto
+  @logarObjeto
   @imprimivel
   class Eletrodomestico {
     constructor() {
@@ -43,9 +43,9 @@ interface Eletrodomestico {
     }
   }
   
-  // new Eletrodomestico()
-  // new Eletrodomestico()
-  // new Eletrodomestico()
+  new Eletrodomestico()
+  new Eletrodomestico()
+  new Eletrodomestico()
 
 function imprimivel(construtor: Function) {
   construtor.prototype.imprimir = function() {
