@@ -40,9 +40,9 @@ Eletrodomestico = __decorate([
     logarObjeto,
     imprimivel
 ], Eletrodomestico);
-new Eletrodomestico();
-new Eletrodomestico();
-new Eletrodomestico();
+// new Eletrodomestico()
+// new Eletrodomestico()
+// new Eletrodomestico()
 function imprimivel(construtor) {
     construtor.prototype.imprimir = function () {
         console.log(this);
@@ -52,19 +52,31 @@ function imprimivel(construtor) {
 const eletro = new Eletrodomestico();
 eletro.imprimir && eletro.imprimir();
 eletro.imprimir && eletro.imprimir();
-// // Desafio Decorator perfilAdmin
-// const usuarioLogado = {
-//   nome: 'Guilherme Filho',
-//   email: 'guigui@gmail.com',
-//   admin: true
-// }
-// @perfilAdmin
-// class MudancaAdministrativa {
-//   critico() {
-//       console.log('Algo crítico foi alterado!')
-//   }
-// }
-// new MudancaAdministrativa().critico()
+// Desafio Decorator perfilAdmin
+const usuarioLogado = {
+    nome: 'Guilherme Filho',
+    email: 'guigui@gmail.com',
+    admin: true
+};
+let MudancaAdministrativa = class MudancaAdministrativa {
+    critico() {
+        console.log('Algo crítico foi alterado!');
+    }
+};
+MudancaAdministrativa = __decorate([
+    perfilAdmin
+], MudancaAdministrativa);
+new MudancaAdministrativa().critico();
+function perfilAdmin(construtor) {
+    return class extends construtor {
+        constructor(...args) {
+            super(...args);
+            if (!usuarioLogado.admin || !usuarioLogado) {
+                throw new Error('Não permitido');
+            }
+        }
+    };
+}
 // function perfilAdmin<T extends Construtor>(construtor: T) {
 //   return class extends construtor {
 //       constructor(...args: any[]) {
