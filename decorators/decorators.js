@@ -77,16 +77,6 @@ function perfilAdmin(construtor) {
         }
     };
 }
-// function perfilAdmin<T extends Construtor>(construtor: T) {
-//   return class extends construtor {
-//       constructor(...args: any[]) {
-//           super(...args)
-//           if(!usuarioLogado || !usuarioLogado.admin) {
-//               throw new Error('Sem permissão!')
-//           }
-//       }
-//   }
-// }
 // class ContaCorrente {
 //   @naoNegativo
 //   private saldo: number
